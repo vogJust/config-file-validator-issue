@@ -210,10 +210,6 @@ func (fsf FileSystemFinder) findOne(pathRoot string, seenMap map[string]struct{}
 					}
 				}
 
-				// Checking for case sensitive exclusion
-				if _, ok := fsf.ExcludeFileTypes[walkFileExtension]; ok {
-					return nil
-				}
 				// Lower case extension after potentially replacing missing extension
 				extensionLowerCase := strings.ToLower(walkFileExtension)
 
